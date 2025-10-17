@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/estilo_letra.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-md-6">
+    <!-- Carrusel institucional y de anuncios -->
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-interval="2000" data-bs-wrap="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Consultoría ambiental"></button>
+            <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Panel de anuncios"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- Slide 1: Consultoría ambiental -->
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center align-items-center" style="min-height:260px; height:auto;">
+                    <div class="card shadow position-relative" style="width: 28rem; max-width:95vw; overflow:hidden; min-height:260px;">
+                        <img src="{% static 'imagen/ICAYS_1.png' %}" alt="Logo ICAYS" style="position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; opacity:0.13; z-index:1;">
+                        <div class="card-body position-relative d-flex flex-column justify-content-center" style="z-index:2; min-height:220px;">
+                            <div class="estilo-letra">
+                                <h5 class="card-title text-center">Nuevo servicio: Consultoría ambiental</h5>
+                                <p class="card-text text-justify">Conoce nuestro nuevo servicio de asesoría y gestión ambiental para empresas. <br>¡Solicita información!</p>
+                                <a href="#" class="btn btn-success d-block mx-auto">Solicitar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2: Panel de anuncios -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center align-items-center" style="min-height:260px; height:auto;">
+                    <div class="card shadow position-relative" style="width: 28rem; max-width:95vw; overflow:hidden; min-height:260px;">
+                        <img src="{% static 'imagen/ICAYS_1.png' %}" alt="Logo ICAYS" style="position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; opacity:0.13; z-index:1;">
+                        <div class="card-body position-relative d-flex flex-column justify-content-center" style="z-index:2; min-height:220px;">
+                            <div class="estilo-letra">
+                                <h5 class="card-title text-center">¡Anúnciate aquí!</h5>
+                                <p class="card-text text-justify">Tus anuncios aparecerán en este espacio. <br>Sube tu promoción desde el panel de administración.</p>
+                                <a href="#" class="btn btn-info d-block mx-auto">Panel de anuncios</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+    </div>
+
+    <div class="col-md-6 d-flex align-items-center">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/iX_on3VxZzk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+    <!-- Servicios destacados -->
+    <section class="container py-5">
+        <h2 class="mb-4 text-center">Servicios destacados</h2>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="{% static 'iconos/agua.png' %}" alt="Aguas y Aguas Residuales" style="width:48px; height:48px;">
+                        <h5 class="mt-3">Aguas y Aguas Residuales</h5>
+                        <p>Laboratorio acreditado para análisis físico-químicos y microbiológicos de agua.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="{% static 'iconos/alimentos.png' %}" alt="Alimentos" style="width:48px; height:48px;">
+                        <h5 class="mt-3">Alimentos</h5>
+                        <p>Servicios de análisis y control de calidad en alimentos y bebidas.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="{% static 'iconos/atm.png' %}" alt="Emisiones a la Atmósfera" style="width:48px; height:48px;">
+                        <h5 class="mt-3">Emisiones a la Atmósfera</h5>
+                        <p>Monitoreo y gestión de emisiones contaminantes en ambientes industriales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios de clientes -->
+    <section class="container py-5">
+        <h2 class="mb-4 text-center">Testimonios de clientes</h2>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"Excelente servicio y atención personalizada. Los resultados siempre confiables."</p>
+                            <footer class="blockquote-footer">Empresa XYZ</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>"ICAYS nos ayudó a cumplir con todas las normativas ambientales. Recomendados."</p>
+                            <footer class="blockquote-footer">Industria ABC</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Noticias -->
+    <section class="container py-5">
+        <h2 class="mb-4 text-center">Blog y noticias</h2>
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Nueva acreditación ISO-17025</h5>
+                        <p class="card-text">Nuestro laboratorio ha renovado su certificación ISO-17025, garantizando calidad y confianza.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Guía ambiental 2025</h5>
+                        <p class="card-text">Descubre las nuevas regulaciones ambientales y cómo cumplirlas fácilmente.</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Evento: Expo Medio Ambiente</h5>
+                        <p class="card-text">Participaremos en la Expo Medio Ambiente 2025. ¡Visítanos en nuestro stand!</p>
+                        <a href="#" class="btn btn-outline-primary btn-sm">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

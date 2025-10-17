@@ -1,0 +1,54 @@
+.social-label {
+  position: absolute;
+  right: 60px;
+  opacity: 0;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 1rem;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(20px);
+  transition: opacity 0.22s, transform 0.22s;
+  z-index: 1;
+}
+.social-btn-home {
+  position: relative;
+}
+.social-btn-home:hover .social-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+.social-btn-home.chatbot-home { background: #4fc3f7; }
+.social-btn-home.login-home { background: #37474f; }
+/* Botones flotantes de redes sociales solo para home */
+.social-floating-home {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.social-btn-home {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.7rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  transition: transform 0.18s, box-shadow 0.18s;
+  text-decoration: none;
+}
+.social-btn-home.facebook-home { background: #1877f3; }
+.social-btn-home.whatsapp-home { background: #25d366; }
+.social-btn-home.instagram-home { background: linear-gradient(135deg,#fd5949,#d6249f,#285AEB); }
+.social-btn-home:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+}

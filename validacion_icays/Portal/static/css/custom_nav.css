@@ -1,0 +1,88 @@
+/* El contenido principal debe tener texto oscuro */
+.main-content, .container, .content, body {
+  color: #000 !important;
+}
+/* Estilos personalizados para el navbar */
+.custom-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.custom-menu li {
+  float: left;
+}
+
+.custom-menu li a {
+  display: block;
+  color: #fdfdfd;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.custom-menu li a:hover {
+  background-color: #ffffff; /* fondo blanco al hacer hover */
+  color: #000000; /* letras negras al hacer hover */
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgb(5, 106, 248);
+}
+
+.custom-menu li a {
+  transition: background-color 180ms ease, color 180ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Solo resalta el fondo y color del enlace activo, sin cambiar el diseño */
+.custom-menu li a.active {
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Menú horizontal solo en pantallas grandes */
+.custom-menu.d-lg-flex {
+  display: flex !important;
+}
+/* Menú vertical en offcanvas solo en móvil */
+@media (max-width: 991.98px) {
+  .custom-menu.d-lg-flex {
+    display: none !important;
+  }
+  .offcanvas .custom-menu {
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+@media (min-width: 992px) {
+  .offcanvas {
+    display: none !important;
+  }
+}
+.offcanvas .custom-menu li a {
+  padding: 18px 24px;
+  border-bottom: 1px solid #ffffff;
+  border-radius: 0;
+}
+.offcanvas .custom-menu li:last-child a {
+  border-bottom: none;
+}
+  .custom-menu li a {
+    padding: 10px 12px;
+  }
+
+/* Forzar sticky en la navbar */
+.navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1030 !important;
+}
+
