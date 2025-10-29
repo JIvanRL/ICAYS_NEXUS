@@ -1,0 +1,75 @@
+/* Carrusel circular tipo Spotify */
+.circular-carousel {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+.circular-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circular-carousel-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  height: 260px;
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0.4;
+  transition: transform 0.5s, opacity 0.5s;
+  z-index: 1;
+  pointer-events: none;
+}
+.circular-carousel-slide.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  z-index: 3;
+  pointer-events: auto;
+}
+.circular-carousel-slide.left {
+  transform: translate(-120%, -50%) scale(0.85) rotate(-12deg);
+  opacity: 0.7;
+  z-index: 2;
+}
+.circular-carousel-slide.right {
+  transform: translate(20%, -50%) scale(0.85) rotate(12deg);
+  opacity: 0.7;
+  z-index: 2;
+}
+.circular-carousel-controls {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+.circular-carousel-btn {
+  background: #22223b;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: background 0.2s;
+}
+.circular-carousel-btn:hover {
+  background: #4fc3f7;
+  color: #22223b;
+}

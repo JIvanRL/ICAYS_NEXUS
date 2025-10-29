@@ -1,3 +1,7 @@
+/* Prevenir scroll horizontal */
+body, html {
+  overflow-x: hidden;
+}
 .social-label {
   position: absolute;
   right: 60px;
@@ -25,9 +29,10 @@
 /* Botones flotantes de redes sociales solo para home */
 .social-floating-home {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 9999;
+  top: 50%;
+  right: max(0px, calc(100vw - 100% - 32px));
+  transform: translateY(-50%);
+  z-index: 1040;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -51,4 +56,58 @@
 .social-btn-home:hover {
   transform: scale(1.12);
   box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+}
+/* Responsividad para botones flotantes de redes sociales */
+@media (max-width: 1200px) {
+  .social-floating-home {
+    right: 16px;
+  }
+}
+@media (max-width: 991.98px) {
+  .social-floating-home {
+    right: max(8px, calc(100vw - 1280px + 8px));
+    gap: 10px;
+  }
+  .social-btn-home {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+  .social-label {
+    font-size: 0.92rem;
+    right: 48px;
+    padding: 5px 12px;
+  }
+}
+/* Arreglando el espacio en blanco para pantallas entre 992px y 1110px */
+@media (min-width: 992px) and (max-width: 1110px) {
+  .social-floating-home {
+    right: clamp(8px, calc(100vw - 1110px + 8px), 32px);
+  }
+  .social-btn-home {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+  .social-label {
+    font-size: 0.92rem;
+    right: 48px;
+    padding: 5px 12px;
+  }
+}
+@media (max-width: 575.98px) {
+  .social-floating-home {
+    right: 2vw;
+    gap: 7px;
+  }
+  .social-btn-home {
+    width: 38px;
+    height: 38px;
+    font-size: 1.05rem;
+  }
+  .social-label {
+    font-size: 0.82rem;
+    right: 40px;
+    padding: 4px 8px;
+  }
 }

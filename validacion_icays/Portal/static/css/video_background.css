@@ -1,0 +1,24 @@
+/* Video de fondo para todas las páginas */
+.video-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    
+    transform: translate(-50%, -50%); /* Centra el video en la pantalla */
+}
+
+/* Asegurar que el contenido esté por encima del video */
+body {
+    position: relative;
+    z-index: 1;
+}
+
+main, header, footer {
+    position: relative;
+    z-index: 2;
+}

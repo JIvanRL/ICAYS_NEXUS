@@ -80,9 +80,23 @@
   }
 
 /* Forzar sticky en la navbar */
-.navbar {
+.navbar.sticky-top {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1030 !important;
+  width: 100% !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Asegurar que el header también sea sticky */
+header {
   position: sticky !important;
   top: 0 !important;
   z-index: 1030 !important;
 }
 
+/* Agregar padding-top al main para compensar el navbar sticky */
+main.main-content {
+  padding-top: 100px !important;
+}

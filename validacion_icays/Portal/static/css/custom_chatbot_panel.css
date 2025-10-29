@@ -1,0 +1,203 @@
+/* ------------------------------------------- */
+/* 1. Lógica para "empujar" y "escalar"        */
+/* ------------------------------------------- */
+
+main {
+ /* Animación suave para el margen y la escala (solo para main) */
+ transition: margin-right 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+ transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-floating-home {
+    /* 1. Le decimos que anime la opacidad y visibilidad */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    /* 2. Por defecto, es visible */
+    opacity: 1; /* Visible */
+    visibility: visible; /* Visible */
+}
+
+/* Cuando el chatbot está abierto (clase agregada por JS al body) */
+body.chatbot-open main {
+    margin-right: 400px !important;
+    transform: scale(0.92);
+    transform-origin: left top;
+}
+
+
+body.chatbot-open .social-floating-home {
+    /* 3. Cuando el chat se abre, lo ocultamos con un fundido */
+    opacity: 0; /* Hacemos que desaparezca */
+    visibility: hidden; /* Lo ocultamos */
+}
+
+/* Header se mantiene fijo, sin empujar */
+body.chatbot-open header {
+    margin-right: 0 !important;
+}
+
+/* Ajustar iframes (videos de YouTube, etc.) cuando el chatbot está abierto */
+body.chatbot-open main iframe {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Hacer las tarjetas más compactas */
+body.chatbot-open main .card {
+    margin-bottom: 0.75rem !important;
+}
+
+body.chatbot-open main .card-body {
+    padding: 1rem !important;
+}
+
+/* Ajustar el tamaño de fuente para mejor legibilidad */
+body.chatbot-open main {
+    font-size: 0.95rem;
+}
+/* ------------------------------------------- */
+/* 2. Estilos del Panel Chatbot Personalizado  */
+/* ------------------------------------------- */
+.custom-chat-panel {
+    /* Posición y tamaño */
+    position: fixed;
+    top: 82px; /* Pegado justo al navbar */
+    width: 400px; 
+    height: calc(100vh - 82px); /* Altura desde el navbar hasta abajo */
+    z-index: 1050; 
+    background-color: #f8f8fa;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
+    
+    /* Oculto por defecto */
+    right: -400px; 
+    
+    /* La animación */
+    transition: right 0.3s ease-in-out; 
+    
+    /* Para que el header y body funcionen */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Clase 'activa' que pondrá el JavaScript */
+.custom-chat-panel.is-open {
+    right: 0; /* Mover a la posición visible */
+}
+/* ------------------------------------------- */
+/* 3. Estilos Interiores (Header, Body, Burbujas) */
+/* ------------------------------------------- */
+/* Estos son tus estilos adaptados a las nuevas clases */
+.custom-chat-header {
+    background: #22223b;
+    color: #fff;
+    font-weight: bold;
+    padding: 1rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Evita que el header se encoja */
+    flex-shrink: 0; 
+}
+.custom-chat-header .offcanvas-title { /* Si mantienes esta clase en el span */
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.custom-chat-body {
+    background: #f4f6fb;
+    padding: 24px 18px;
+    
+    /* Ocupa todo el espacio restante */
+    flex-grow: 1; 
+    /* Permite scroll si hay muchos mensajes */
+    overflow-y: auto; 
+
+    /* Para que el input (si está al final) quede abajo */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+}
+.custom-chat-panel .chatbot-message {
+    margin-bottom: 12px;
+    /* Necesario para que las burbujas user/bot se alineen */
+    display: flex;
+}
+/** Estilos para las burbujas de chat */
+.custom-chat-panel .chatbot-bubble {
+    font-size: 1.08rem;
+    line-height: 1.5;
+    padding: 12px 18px;
+    border-radius: 18px 18px 18px 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    max-width: 80%;
+    word-break: break-word;
+}
+.custom-chat-panel .chatbot-message.user {
+    justify-content: flex-end; /* Alinea a la derecha */
+}
+.custom-chat-panel .chatbot-message.user .chatbot-bubble {
+    background: #e9ecef;
+    color: #22223b;
+    border-radius: 4px 18px 18px 18px;
+}
+.custom-chat-panel .chatbot-message.bot {
+    justify-content: flex-start; /* Alinea a la izquierda */
+}
+.custom-chat-panel .chatbot-message.bot .chatbot-bubble {
+    background: #4fc3f7;
+    color: #fff;
+    border-radius: 18px 4px 18px 18px;
+}
+.custom-chat-panel input[type="text"] {
+    background: #fff;
+    border-radius: 18px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    /* Asegura que el input se vea bien */
+    padding: 10px 16px; 
+    width: 100%;
+}
+.custom-chat-panel .btn-dark {
+    border-radius: 18px;
+    background: #22223b;
+    color: #fff;
+    font-weight: 500;
+    padding: 8px 18px;
+    transition: background 0.2s;
+    border: none;
+}
+.custom-chat-panel .btn-dark:hover {
+    background: #4fc3f7;
+    color: #22223b;
+}
+.main-content {
+    padding-top: 100px; 
+}
+
+@media(max-width: 1024px) {
+    /* Ajustes para pantallas más pequeñas */
+    .custom-chat-panel {
+        width: 100%;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        z-index: 1050;
+    }
+    /* Ajustes para cuando el chatbot está abierto */
+    body.chatbot-open main {
+        margin-right: 0 !important;
+        transform: none;
+    }
+    /* Ocultar los botones flotantes de redes sociales */
+    body.chatbot-open .social-floating-home {
+        right: -100%;
+        opacity: 0;
+        margin-right: 0;
+        visibility: hidden;
+    }
+    /* Animación suave para los botones flotantes */
+    .social-floating-home {
+        transition: margin-right 0.35s cubic-bezier(0.4, 0, 0.2, 1), 
+                    opacity 0.3s ease, 
+                    visibility 0.3s ease;
+    }
+}

@@ -5,70 +5,70 @@
 {% endblock %}
 {% block content %}
 
-<div class="container py-4">
+<div class="container">
 	<div class="row justify-content-center align-items-stretch g-4">
-	<!-- Cotización rápida a la izquierda -->
-	<div class="col-lg-6 col-md-12 d-flex flex-column">
-	<h2 class="mb-4 contacto-titulo">Cotización rápida</h2>
-	<form method="post" action="#" class="p-3 rounded-4 shadow-sm mb-0 flex-grow-1 contacto-form">
-			<div class="mb-3">
-				<input type="text" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="nombre" name="nombre" placeholder="Nombre completo" required>
-			</div>
-			<div class="mb-3">
-				<input type="text" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="empresa" name="empresa" placeholder="Empresa">
-			</div>
-			<div class="mb-3">
-				<input type="email" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="gmail" name="gmail" placeholder="Correo Gmail" required>
-			</div>
-			<div class="mb-3">
-				<input type="tel" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="telefono" name="telefono" placeholder="Teléfono" required>
-			</div>
-			<div class="mb-3">
-				<select class="form-select border-0 border-bottom rounded-0 bg-transparent" id="tipo_analisis" name="tipo_analisis" required>
-					<option value="">Tipo de análisis...</option>
-					<option value="aguas">Aguas y Aguas Residuales</option>
-					<option value="alimentos">Alimentos</option>
-					<option value="atmósfera">Emisiones a la Atmósfera</option>
-					<option value="laboral">Estudios Laborales</option>
-					<option value="gestoria">Gestoría Ambiental</option>
-					<option value="otro">Otro</option>
-				</select>
-			</div>
-			<div class="mb-3">
-				<textarea class="form-control border-0 border-bottom rounded-0 bg-transparent" id="descripcion" name="descripcion" rows="3" placeholder="Descripción del servicio" required></textarea>
-			</div>
-			<div class="d-grid">
-				<button type="submit" class="btn btn-enviar-negro rounded-pill">Enviar</button>
-			</div>
-		</form>
-	</div>
-	<!-- Contacto a la derecha -->
-	<div class="col-lg-6 col-md-12 d-flex flex-column">
-	<h3 class="mb-4 contacto-titulo">Contacto</h3>
-	<div class="p-3 rounded-4 shadow-sm mb-0 flex-grow-1 contacto-form">
-			<div style="margin-bottom:0.5rem; padding-bottom:0.5rem; border-bottom:2px solid #063970;">
-				<span class="fw-bold">Ventas/Laboratorio:</span><br>
-				<img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto Yazmín" class="rounded-circle mb-2" style="width:56px; height:56px; object-fit:cover;">
-				Lic. Yazmín Pamela González Marcial<br>
-				<a href="mailto:ventas2@icays.mx" class="text-decoration-none">ventas2@icays.mx</a><br>
-				<a href="tel:2224290478" class="text-decoration-none">222 429 0478</a>
-			</div>
-			<div style="margin-bottom:0.5rem; padding-bottom:0.5rem; border-bottom:2px solid #063970;">
-				<span class="fw-bold">Gestión Ambiental:</span><br>
-				<img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto Natalia" class="rounded-circle mb-2" style="width:56px; height:56px; object-fit:cover;">
-				Ing. Natalia Limón Vázquez<br>
-				<a href="mailto:gestion@icays.mx" class="text-decoration-none">gestion@icays.mx</a><br>
-				<a href="tel:2212720077" class="text-decoration-none">221 272 0077</a>
-			</div>
-			<div style="margin-bottom:0;">
-				<span class="fw-bold">Plantas de Tratamiento de Agua Residual:</span><br>
-				<img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Foto Aislinn" class="rounded-circle mb-2" style="width:56px; height:56px; object-fit:cover;">
-				Ing. Aislinn Pulido López<br>
-				<a href="mailto:proyectos@icays.mx" class="text-decoration-none">proyectos@icays.mx</a><br>
-				<a href="tel:2226616354" class="text-decoration-none">222 661 6354</a>
+		<!-- Cotización rápida a la izquierda -->
+		<div class="col-lg-6 col-md-12 d-flex flex-column">
+		<h2 class="mb-4 contacto-titulo">Cotización rápida</h2>
+		<form method="post" action="#" class="p-3 rounded-4 shadow-sm mb-0 flex-grow-1 contacto-form">
+				<div class="mb-3">
+					<input type="text" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="nombre" name="nombre" placeholder="Nombre completo" required>
+				</div>
+				<div class="mb-3">
+					<input type="text" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="empresa" name="empresa" placeholder="Empresa">
+				</div>
+				<div class="mb-3">
+					<input type="email" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="gmail" name="gmail" placeholder="Correo Gmail" required>
+				</div>
+				<div class="mb-3">
+					<input type="tel" class="form-control border-0 border-bottom rounded-0 bg-transparent" id="telefono" name="telefono" placeholder="Teléfono" required>
+				</div>
+				<div class="mb-3">
+					<select class="form-select border-0 border-bottom rounded-0 bg-transparent" id="tipo_analisis" name="tipo_analisis" required>
+						<option value="">Tipo de análisis...</option>
+						<option value="aguas">Aguas y Aguas Residuales</option>
+						<option value="alimentos">Alimentos</option>
+						<option value="atmósfera">Emisiones a la Atmósfera</option>
+						<option value="laboral">Estudios Laborales</option>
+						<option value="gestoria">Gestoría Ambiental</option>
+						<option value="otro">Otro</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<textarea class="form-control border-0 border-bottom rounded-0 bg-transparent" id="descripcion" name="descripcion" rows="3" placeholder="Descripción del servicio" required></textarea>
+				</div>
+				<div class="d-grid">
+					<button type="submit" class="btn btn-enviar-negro rounded-pill">Enviar</button>
+				</div>
+			</form>
+		</div>
+		<!-- Contacto a la derecha -->
+		<div class="col-lg-6 col-md-12 d-flex flex-column">
+		<h3 class="mb-4 contacto-titulo">Contacto</h3>
+		<div class="p-3 rounded-4 shadow-sm mb-0 flex-grow-1 contacto-form">
+				<div style="margin-bottom:0.5rem; padding-bottom:0.5rem; border-bottom:2px solid #063970;">
+					<span class="fw-bold">Ventas/Laboratorio:</span><br>
+					<img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto Yazmín" class="rounded-circle mb-2" style="width:56px; height:56px; object-fit:cover;">
+					Lic. Yazmín Pamela González Marcial<br>
+					<a href="mailto:ventas2@icays.mx" class="text-decoration-none">ventas2@icays.mx</a><br>
+					<a href="tel:2224290478" class="text-decoration-none">222 429 0478</a>
+				</div>
+				<div style="margin-bottom:0.5rem; padding-bottom:0.5rem; border-bottom:2px solid #063970;">
+					<span class="fw-bold">Gestión Ambiental:</span><br>
+					<img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Foto Natalia" class="rounded-circle mb-2" style="width:56px; height:56px; object-fit:cover;">
+					Ing. Natalia Limón Vázquez<br>
+					<a href="mailto:gestion@icays.mx" class="text-decoration-none">gestion@icays.mx</a><br>
+					<a href="tel:2212720077" class="text-decoration-none">221 272 0077</a>
+				</div>
+				<div style="margin-bottom:0;">
+					<span class="fw-bold">Plantas de Tratamiento de Agua Residual:</span><br>
+					<img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Foto Aislinn" class="rounded-circle mb-2" style="width:56px; height:56px; object-fit:cover;">
+					Ing. Aislinn Pulido López<br>
+					<a href="mailto:proyectos@icays.mx" class="text-decoration-none">proyectos@icays.mx</a><br>
+					<a href="tel:2226616354" class="text-decoration-none">222 661 6354</a>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </div>
 {% endblock %}
