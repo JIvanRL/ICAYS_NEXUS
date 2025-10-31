@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   // Iniciar el carrusel automático
   function startAuto() {
-    autoInterval = setInterval(nextSlide, 3000);
+    autoInterval = setInterval(nextSlide, 4000);
   }
   function restartAuto() {
     clearInterval(autoInterval);

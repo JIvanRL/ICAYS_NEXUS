@@ -1,9 +1,46 @@
+/* Mejor presentación para los inputs del formulario de contacto */
+.contacto-form input.form-control,
+.contacto-form select.form-select,
+.contacto-form textarea.form-control {
+  background: #f7f7faa9;
+  border: 1.5px solid #d1d5db;
+  border-radius: 20px;
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contacto-form input.form-control:focus,
+.contacto-form select.form-select:focus,
+.contacto-form textarea.form-control:focus {
+  border-color: #063970;
+  box-shadow: 0 0 0 2px #cbe7ff;
+  background: #fff;
+}
+
+/* Botón enviar: blanco con texto negro */
+.btn-enviar-rounded-pill {
+  background: #fff !important;
+  color: #222 !important;
+  border: 2px solid #063970;
+  font-weight: 600;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn-enviar-rounded-pill:hover {
+  background: #f7f7fa !important;
+  color: #063970 !important;
+  box-shadow: 0 4px 16px #06397022;
+}
 /* Estilo minimalista para textos en cards del carrusel */
 .estilo-letra {
   background: rgba(255, 255, 255, 0.85);
   border-radius: 16px;
   padding: 12px 18px;
-  color: #000 !important;
+  color: #000000 !important;
 }
 .estilo-letra h2 {
   font-weight: 700;
@@ -40,12 +77,11 @@
 }
 .contacto-titulo {
   font-weight: 600;
-  color: #000 !important;
+  color: #e6e6e6 !important;
   letter-spacing: 1px;
 }
 
 .contacto-form {
-  background: #f8f9fa !important;
   border: 1px solid #e3e3e3 !important;
 }
 .btn-enviar-negro:hover,
@@ -53,4 +89,8 @@
   background: #fff !important;
   color: #000 !important;
   border: 2px solid #000 !important;
+}
+
+.letra {
+  color: white !important;
 }

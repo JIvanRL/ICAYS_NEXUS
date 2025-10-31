@@ -1,15 +1,17 @@
+
 /* El contenido principal debe tener texto oscuro */
 .main-content, .container, .content, body {
   color: #000 !important;
 }
+
 /* Estilos personalizados para el navbar */
 .custom-menu {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 3px 0;
   background-color: transparent;
   display: flex;
-  gap: 24px;
+  gap: 12px;
   align-items: center;
 }
 
@@ -17,11 +19,12 @@
   float: left;
 }
 
+
 .custom-menu li a {
   display: block;
   color: #fdfdfd;
   text-align: center;
-  padding: 14px 16px;
+  padding: 8px 12px;
   text-decoration: none;
   font-size: 1.05rem;
   font-weight: 500;
@@ -75,9 +78,11 @@
 .offcanvas .custom-menu li:last-child a {
   border-bottom: none;
 }
-  .custom-menu li a {
-    padding: 10px 12px;
-  }
+/* Eliminar padding extra en el navbar principal */
+.navbar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
 
 /* Forzar sticky en la navbar */
 .navbar.sticky-top {

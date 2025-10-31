@@ -39,12 +39,11 @@
                 <source src="{% static 'videos/Video_de_Logo_con_Efecto_Agua_geminai.mp4' %}" type="video/mp4">
             </video>
     </div>
-    
-    
             {% if user.is_authenticated %}
             <input type="hidden" id="user-id" value="{{ user.id_user }}">
             {% endif %}
     <header>
+        
         <nav class="fixed-top navbar navbar-expand-lg " style="background-color: #000000; padding: 10px 0;">
             <div class="container-fluid">
                 <a class="navbar-brand d-flex align-items-center" href="#" style="color:#fff;">
@@ -79,6 +78,8 @@
                 </div>
             </div>
         </nav>
+        
+        
     </header>
     
     <!-- Contenido principal -->
@@ -182,6 +183,7 @@
 {% block extra_js %}
 {% endblock %}
     <script src="{% static 'js/custom_chatbot_panel.js' %}"></script>
+    
 </body>
 </html>
 
