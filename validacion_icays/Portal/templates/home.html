@@ -1,3 +1,4 @@
+       
 {% extends 'base.html' %}
 {% load static %}
 {% block extra_css %}
@@ -9,8 +10,9 @@
 
 {% block content %}
 
-        <!-- Toast de bienvenida -->
+        <!-- Contenedor unificado de toasts en la esquina inferior derecha -->
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1080;">
+            <!-- Toast de bienvenida del asistente -->
             <div id="welcomeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
                     <img src="{% static 'imagen/ICAYS_1.png' %}" class="rounded me-2" alt="Asistente" style="width:24px;height:24px;">
@@ -22,12 +24,63 @@
                     ¡Visita nuestro asistente para resolver dudas! Si quieres cotizar, el mismo te contactará con un asesor.
                 </div>
             </div>
+            <!-- Toast de Pagos -->
+            <div id="toastPago" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="{% static 'imagen/ICAYS_1.png' %}" class="rounded me-2" alt="Pago" style="width:24px;height:24px;">
+                    <strong class="me-auto">ICAYS Pagos</strong>
+                    <small>Info</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">
+                    ¡Aceptamos todo tipo de pago: bancos, tarjetas, transferencias y más!
+                </div>
+            </div>
+            <!-- Toast de Precios -->
+            <div id="toastPrecios" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="{% static 'imagen/ICAYS_1.png' %}" class="rounded me-2" alt="Precios" style="width:24px;height:24px;">
+                    <strong class="me-auto">ICAYS Precios</strong>
+                    <small>Info</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">
+                    Consulta nuestros precios competitivos y solicita tu cotización personalizada.
+                </div>
+            </div>
+            <!-- Toast de Solución -->
+            <div id="toastSolucion" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img src="{% static 'imagen/ICAYS_1.png' %}" class="rounded me-2" alt="Solución" style="width:24px;height:24px;">
+                    <strong class="me-auto">ICAYS Solución</strong>
+                    <small>Info</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">
+                    En ICAYS somos la solución para tus necesidades ambientales.
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast de anuncio superior -->
+        <div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1080;">
+            <div id="infoToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header bg-primary text-white">
+                    <img src="{% static 'imagen/ICAYS_1.png' %}" class="rounded me-2" alt="Anuncio" style="width:24px;height:24px;">
+                    <strong class="me-auto">ICAYS Plataforma</strong>
+                    <small>Nuevo</small>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                </div>
+                <div class="toast-body">
+                    Consulta tu informe de resultados con nuestra plataforma. ¡Accede fácil y rápido a tus análisis!
+                </div>
+            </div>
         </div>
         <div class="row">
       <div class="col-12">
         <div class="card shadow-sm border-0 my-5 p-4" style="background:#f5f7fa00;">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8 ">
                   <!-- Carrusel circular institucional y de anuncios -->
                   <div class="circular-carousel">
                             <div class="circular-carousel-track">
@@ -70,7 +123,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Slide 4: Asistente Virtual -->
+                                <!-- Slide 4: Laboratorio de Ensayo Acreditado por EMA -->
+                                <div class="circular-carousel-slide">
+                                    <div class="card shadow position-relative" style="width: 28rem; max-width:95vw; overflow:hidden; min-height:260px;">
+                                        <img src="{% static 'imagen/ICAYS_1.png' %}" alt="Laboratorio EMA" style="position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; opacity:0.13; z-index:1;">
+                                        <div class="card-body position-relative d-flex flex-column justify-content-center" style="z-index:2; min-height:220px;">
+                                            <div class="estilo-letra">
+                                                <h5 class="card-title text-center">LABORATORIO DE ENSAYO ACREDITADO POR EMA</h5>
+                                                <p class="card-text text-justify">Nuestra oferta propone un amplio portafolio de soluciones ambientales que permiten la preservación de los recursos, asegurando el respeto y cumplimiento de la legislación ambiental y contribuyendo a la implementación de una economía circular.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Slide 5: Asistente Virtual -->
                                 <div class="circular-carousel-slide">
                                     <div class="card shadow position-relative" style="width: 28rem; max-width:95vw; overflow:hidden; min-height:260px;">
                                         <img src="{% static 'imagen/ICAYS_1.png' %}" alt="Asistente ICAYS" style="position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; opacity:0.13; z-index:1;">
@@ -92,9 +157,6 @@
                   </div>
                   
                 </div>
-                    <div class="col-md-6 d-flex align-items-center">
-                        <iframe width="100%" height="315" src="https://player.vimeo.com/video/1086907142?h=c97e8e6d1c" title="Vimeo video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
           </div>
         </div>
       </div>
@@ -143,7 +205,7 @@
             <h2 class="mb-4 text-center" style="color: azure;">Testimonios de clientes</h2>
             <div class="row justify-content-center g-4">
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm opacidad">
+                    <div class="card h-100 shadow-sm opacidad testimonial-fadein-left">
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                                 <p>"Excelente servicio y atención personalizada. Los resultados siempre confiables."</p>
@@ -153,11 +215,41 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card h-100 shadow-sm opacidad">
+                    <div class="card h-100 shadow-sm opacidad testimonial-fadein-left">
                         <div class="card-body">
                             <blockquote class="blockquote mb-0">
                                 <p>"ICAYS nos ayudó a cumplir con todas las normativas ambientales. Recomendados."</p>
                                 <footer class="blockquote-footer">Industria ABC</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm opacidad testimonial-fadein-right">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>"El laboratorio de ICAYS nos brindó resultados rápidos y precisos. Muy profesionales."</p>
+                                <footer class="blockquote-footer">Laboratorio Central</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm opacidad testimonial-fadein-right">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>"Gracias a ICAYS pudimos mejorar nuestros procesos y cumplir con los estándares ambientales."</p>
+                                <footer class="blockquote-footer">Servicios Ambientales MX</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm opacidad testimonial-fadein-right">
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                                <p>"Recomiendo ICAYS por su atención y asesoría experta. Nos acompañaron en todo el proceso."</p>
+                                <footer class="blockquote-footer">Consultora Verde</footer>
                             </blockquote>
                         </div>
                     </div>
@@ -206,13 +298,6 @@
 {% endblock %}
 {% block extra_js %}
         <script src="{% static 'js/circular_carousel.js' %}"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var toastEl = document.getElementById('welcomeToast');
-                if (toastEl) {
-                    var toast = new bootstrap.Toast(toastEl, { delay: 7000 });
-                    toast.show();
-                }
-            });
-        </script>
+        <script src="{% static 'js/testimonios_anim.js' %}"></script>
+        <script src="{% static 'js/toast_notifications.js' %}"></script>
 {% endblock %}

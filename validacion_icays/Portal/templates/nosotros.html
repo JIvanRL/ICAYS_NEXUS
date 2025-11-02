@@ -4,17 +4,17 @@
 {% block extra_css %}
     
     <link rel="stylesheet" href="{% static 'css/estilo_letra.css' %}">
+    <link rel="stylesheet" href="{% static 'css/opacity.css' %}">
 {% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="mb-4">Nosotros</h1>
-    <div class="row justify-content-center">
+        <div class="row justify-content-center">
+        <!-- Card 1: ¿QUIÉNES SOMOS? -->
         <div class="col-md-6 mb-4">
-            <div class="card shadow position-relative" style="width: 100%; max-width:28rem; overflow:hidden; min-height:260px;">
-                <img src="{% static 'imagen/ICAYS_1.png' %}" alt="Logo ICAYS" style="position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; opacity:0.22; z-index:1;">
-                <div class="card-body position-relative d-flex flex-column justify-content-center" style="z-index:2; min-height:220px;">
-                    <div class="estilo-letra">
-                        <h2 class="text-center">¿QUIÉNES SOMOS?</h2>
+            <div class="card shadow position-relative opacidad" style="width: 100%; max-width:28rem; overflow:hidden; min-height:260px;">
+                <div class="card-body position-relative d-flex flex-column justify-content-center opacidad" style="z-index:2; min-height:220px;">
+                    <h2 class="text-center">¿QUIÉNES SOMOS?</h2>
                         <p class="text-justify">
                             La empresa ICAYS fue fundada en 1987, con la finalidad de proveer servicios basados en ingeniería de vanguardia, la demanda de nuevas regulaciones ambientales permite el surgimiento del Laboratorio Acreditado en Aguas y Aguas Residuales, bajo la Certificación ISO-17025.
                         </p>
@@ -24,16 +24,14 @@
                         <p class="text-center" style="font-style:italic;">
                             Laboratorio ambiental en Puebla – INGENIERÍA DE CONTROL AMBIENTAL Y SANEAMIENTO S.A. de C.V
                         </p>
-                    </div>
                 </div>
             </div>
         </div>
+        <!-- Card 2: MISIÓN y VISIÓN -->
         <div class="col-md-6 mb-4">
-            <div class="card shadow position-relative" style="width: 100%; max-width:28rem; overflow:hidden; min-height:260px; height:360px;">
-                <img src="{% static 'imagen/ICAYS_1.png' %}" alt="Logo ICAYS" style="position:absolute; left:0; top:0; width:100%; height:100%; object-fit:contain; opacity:0.22; z-index:1;">
+            <div class="card shadow position-relative opacidad" style="width: 100%; max-width:28rem; overflow:hidden; min-height:260px; height:360px;">
                 <div class="card-body position-relative d-flex flex-column justify-content-center" style="z-index:2; min-height:220px; height:100%;">
-                    <div class="estilo-letra">
-                        <h2 class="text-center">MISIÓN</h2>
+                    <h2 class="text-center">MISIÓN</h2>
                         <p class="text-justify">
                             Prolongar y mejorar la calidad de vida, mediante acciones y soluciones para reducir y controlar la contaminación del medio ambiente.
                         </p>
@@ -41,9 +39,11 @@
                         <p class="text-justify">
                             Liderazgo e innovación a nivel nacional, en la aplicación de sistemas para prevenir la contaminación, mediante proyectos de desarrollo sustentable.
                         </p>
-                    </div>
                 </div>
             </div>
+        </div>
+        <div class="col-md-12 d-flex align-items-center justify-content-center my-4">
+            <iframe width="900" height="480" src="https://player.vimeo.com/video/1086907142?h=c97e8e6d1c" title="Vimeo video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:16px;"></iframe>
         </div>
     </div>
 </div>
