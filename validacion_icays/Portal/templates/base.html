@@ -39,9 +39,7 @@
                 <source src="{% static 'videos/Video_de_Logo_con_Efecto_Agua_geminai.mp4' %}" type="video/mp4">
             </video>
     </div>
-            {% if user.is_authenticated %}
-            <input type="hidden" id="user-id" value="{{ user.id_user }}">
-            {% endif %}
+            
     <header>
         
         <nav class="fixed-top navbar navbar-expand-lg " style="background-color: #000000; padding: 10px 0;">
@@ -90,29 +88,27 @@
     
     
     <div class="social-floating-home">
-        <!-- TODO: Hacer dinámico desde el admin o API. Iterar sobre una lista de redes sociales -->
-        <a href="https://facebook.com/" target="_blank" class="social-btn-home facebook-home" title="Facebook">
-            <i class="fab fa-facebook-f"></i>
-            <span class="social-label">Facebook</span>
-        </a>
-        <a href="https://wa.me/" target="_blank" class="social-btn-home whatsapp-home" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="social-label">WhatsApp</span>
-        </a>
-        <a href="https://instagram.com/" target="_blank" class="social-btn-home instagram-home" title="Instagram">
-            <i class="fab fa-instagram"></i>
-            <span class="social-label">Instagram</span>
-        </a>
-        <button id="chatbotOpenBtn" class="social-btn-home chatbot-home" title="Chatbot" type="button">
-            <i class="bi bi-chat-dots-fill"></i>
-            <span class="social-label">Chatbot</span>
-        </button>
-        
-        <a data-bs-toggle="modal" class="social-btn-home login-home" title="Login" data-bs-target="#registerModal">
-            <i class="bi bi-person-circle"></i>
-            <span class="social-label">Loguearse</span>
-        </a>
-    </div>
+    <a href="https://facebook.com/" target="_blank" class="social-btn-home facebook-home" title="Facebook">
+      <i class="fab fa-facebook-f"></i>
+      <span class="social-label">Facebook</span>
+    </a>
+    <a href="https://wa.me/" target="_blank" class="social-btn-home whatsapp-home" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+      <span class="social-label">WhatsApp</span>
+    </a>
+    <a href="https://instagram.com/" target="_blank" class="social-btn-home instagram-home" title="Instagram">
+      <i class="fab fa-instagram"></i>
+      <span class="social-label">Instagram</span>
+    </a>
+    <button id="chatbotOpenBtn" class="social-btn-home chatbot-home" title="Chatbot" type="button">
+      <i class="bi bi-chat-dots-fill"></i>
+      <span class="social-label">Chatbot</span>
+    </button>
+    <button id="registerModalOpenBtn" class="social-btn-home login-home" title="Login" type="button" data-bs-toggle="modal" data-bs-target="#registerModal">
+      <i class="bi bi-person-circle"></i>
+      <span class="social-label">Consultar</span>
+    </button>
+  </div>
                 <!-- Modal de registro -->
     <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
         <div class="modal-dialog">

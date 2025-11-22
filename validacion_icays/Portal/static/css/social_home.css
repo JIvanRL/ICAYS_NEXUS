@@ -2,112 +2,159 @@
 body, html {
   overflow-x: hidden;
 }
-.social-label {
-  position: absolute;
-  right: 60px;
-  opacity: 0;
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  padding: 6px 18px;
-  border-radius: 20px;
-  font-size: 1rem;
-  white-space: nowrap;
-  pointer-events: none;
-  transform: translateX(20px);
-  transition: opacity 0.22s, transform 0.22s;
-  z-index: 1;
-}
-.social-btn-home {
-  position: relative;
-}
-.social-btn-home:hover .social-label {
-  opacity: 1;
-  transform: translateX(0);
-}
-.social-btn-home.chatbot-home { background: #4fc3f7; }
-.social-btn-home.login-home { background: #37474f; }
-/* Botones flotantes de redes sociales solo para home */
+
+/* Botones flotantes de redes sociales - Diseño cuadrado */
 .social-floating-home {
   position: fixed;
   top: 50%;
-  right: max(0px, calc(100vw - 100% - 32px));
+  right: 32px;
   transform: translateY(-50%);
   z-index: 1040;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
 }
+
 .social-btn-home {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.7rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  transition: transform 0.18s, box-shadow 0.18s;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  
+  /* Transición suave */
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(1) translateX(0);
 }
+
+/* Brillo superior sutil */
+.social-btn-home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), transparent 60%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Colores de cada red social */
 .social-btn-home.facebook-home { background: #1877f3; }
 .social-btn-home.whatsapp-home { background: #25d366; }
-.social-btn-home.instagram-home { background: linear-gradient(135deg,#fd5949,#d6249f,#285AEB); }
-.social-btn-home:hover {
-  transform: scale(1.12);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+.social-btn-home.instagram-home { 
+  background: linear-gradient(135deg, #fd5949, #d6249f, #285AEB); 
 }
+.social-btn-home.chatbot-home { background: #4fc3f7; }
+.social-btn-home.login-home { background: #37474f; }
+
+/* Hover - Movimiento hacia la izquierda y agrandar */
+.social-btn-home:hover,
+.social-btn-home:focus-visible {
+  transform: scale(1.15) translateX(-12px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+/* Efecto sutil en botones vecinos */
+.social-btn-home:hover + .social-btn-home,
+.social-btn-home:focus-visible + .social-btn-home {
+  transform: scale(1.05) translateX(-6px);
+}
+
+/* Labels */
+.social-label {
+  position: absolute;
+  right: 70px;
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(10px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 15;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Flecha del tooltip */
+.social-label::after {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.social-btn-home:hover .social-label,
+.social-btn-home:focus-visible .social-label {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
 /* Responsividad para botones flotantes de redes sociales */
 @media (max-width: 1200px) {
   .social-floating-home {
     right: 16px;
   }
 }
+
 @media (max-width: 991.98px) {
   .social-floating-home {
-    right: max(8px, calc(100vw - 1280px + 8px));
+    right: 8px;
     gap: 10px;
+    padding: 10px;
   }
   .social-btn-home {
-    width: 44px;
-    height: 44px;
-    font-size: 1.3rem;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
   }
   .social-label {
-    font-size: 0.92rem;
-    right: 48px;
-    padding: 5px 12px;
+    font-size: 0.9rem;
+    right: 60px;
+    padding: 6px 14px;
   }
 }
-/* Arreglando el espacio en blanco para pantallas entre 992px y 1110px */
-@media (min-width: 992px) and (max-width: 1110px) {
-  .social-floating-home {
-    right: clamp(8px, calc(100vw - 1110px + 8px), 32px);
-  }
-  .social-btn-home {
-    width: 44px;
-    height: 44px;
-    font-size: 1.3rem;
-  }
-  .social-label {
-    font-size: 0.92rem;
-    right: 48px;
-    padding: 5px 12px;
-  }
-}
+
 @media (max-width: 575.98px) {
   .social-floating-home {
-    right: 2vw;
-    gap: 7px;
+    right: 4px;
+    gap: 8px;
+    padding: 8px;
   }
   .social-btn-home {
-    width: 38px;
-    height: 38px;
-    font-size: 1.05rem;
+    width: 46px;
+    height: 46px;
+    font-size: 1.3rem;
   }
   .social-label {
-    font-size: 0.82rem;
-    right: 40px;
-    padding: 4px 8px;
+    font-size: 0.85rem;
+    right: 54px;
+    padding: 5px 12px;
+  }
+  /* Reducir efecto hover en móviles */
+  .social-btn-home:hover,
+  .social-btn-home:focus-visible {
+    transform: scale(1.1) translateX(-8px);
   }
 }

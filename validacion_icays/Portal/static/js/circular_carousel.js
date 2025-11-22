@@ -1,5 +1,3 @@
-// Carrusel circular tipo Spotify
-// Requiere estructura HTML con .circular-carousel, .circular-carousel-track y .circular-carousel-slide
 
 document.addEventListener('DOMContentLoaded', function() {
   const track = document.querySelector('.circular-carousel-track');
