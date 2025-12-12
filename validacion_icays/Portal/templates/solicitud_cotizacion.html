@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/opacity.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo_letra.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-12 d-flex flex-column">
+            <h2 class="mb-4 contacto-titulo">Solicitud de servicio</h2>
+            <form method="post" action="#" id="formSolicitudServicio" class="p-3 rounded-4 shadow-sm mb-0 flex-grow-1 contacto-form opacidad">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <input type="text" class="form-control border-0 border-bottom rounded-0" id="nombre" name="nombre" placeholder="Nombre completo / Empresa" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control border-0 border-bottom rounded-0" id="correo" name="correo" placeholder="Correo electrónico" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control border-0 border-bottom rounded-0" id="telefono" name="telefono" placeholder="Teléfono" required>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select border-0 border-bottom rounded-0" id="servicio" name="servicio" required>
+                                <option value="">Servicio seleccionado...</option>
+                                <option value="ANÁLISIS DE AGUA POTABLE Y PURIFICADA" {% if servicio_seleccionado == "ANÁLISIS DE AGUA POTABLE Y PURIFICADA" %}selected{% endif %}>Análisis de Agua Potable y Purificada</option>
+                                <option value="AGUA RESIDUAL" {% if servicio_seleccionado == "AGUA RESIDUAL" %}selected{% endif %}>Agua Residual</option>
+                                <option value="LABORATORIO DE ALIMENTOS" {% if servicio_seleccionado == "LABORATORIO DE ALIMENTOS" %}selected{% endif %}>Laboratorio de Alimentos</option>
+                                <option value="ESTUDIOS DE AMBIENTE LABORAL" {% if servicio_seleccionado == "ESTUDIOS DE AMBIENTE LABORAL" %}selected{% endif %}>Estudios de Ambiente Laboral</option>
+                                <option value="EVALUACIÓN DE LAS EMISIONES A LA ATMOSFERA GENERADAS POR FUENTES FIJAS" {% if servicio_seleccionado == "EVALUACIÓN DE LAS EMISIONES A LA ATMOSFERA GENERADAS POR FUENTES FIJAS" %}selected{% endif %}>Evaluación de Emisiones a la Atmósfera</option>
+                                <option value="PLANTAS DE TRATAMIENTO DE AGUA RESIDUAL" {% if servicio_seleccionado == "PLANTAS DE TRATAMIENTO DE AGUA RESIDUAL" %}selected{% endif %}>Plantas de Tratamiento de Agua Residual</option>
+                                <option value="GESTORÍA AMBIENTAL" {% if servicio_seleccionado == "GESTORÍA AMBIENTAL" %}selected{% endif %}>Gestoría Ambiental</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control border-0 border-bottom rounded-0" id="descripcion" name="descripcion" rows="3" placeholder="Descripción de la necesidad / proyecto" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <input type="text" class="form-control border-0 border-bottom rounded-0" id="ubicacion" name="ubicacion" placeholder="Ubicación">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" class="form-control border-0 border-bottom rounded-0" id="cantidad" name="cantidad" placeholder="Cantidad de muestras / parámetros">
+                        </div>
+                        <div class="mb-3">
+                            <input type="date" class="form-control border-0 border-bottom rounded-0" id="fecha" name="fecha" placeholder="Fecha estimada de inicio">
+                        </div>
+                        <div class="mb-3">
+                            <input type="file" class="form-control border-0 border-bottom rounded-0" id="documentos" name="documentos" multiple>
+                        </div>
+                        <div class="mb-3">
+                            <select class="form-select border-0 border-bottom rounded-0" id="preferencia" name="preferencia">
+                                <option value="Contacto directo">Contacto directo</option>
+                                <option value="chatbot">Chatbot</option>
+                                <option value="correo">Correo electrónico</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-grid mt-3">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#modalExito" class="btn btn-enviar-rounded-pill rounded-pill">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% include 'partials/modal_solicitud_servicio.html' %}
+
+{% block extra_js %}
+{% endblock %}

@@ -10,3 +10,6 @@ def servicios(request):
     return render(request, 'servicios.html')
 def nosotros(request):
     return render(request, 'nosotros.html')
+def solicitud_cotizacion(request):
+    servicio_seleccionado = request.GET.get('servicio', '')
+    return render(request, 'solicitud_cotizacion.html', {'servicio_seleccionado': servicio_seleccionado})
