@@ -37,4 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!btnAbrir) console.error("Falta: #chatbotOpenBtn");
         if (!btnCerrar) console.error("Falta: #chatbotCloseBtn");
     }
+    var modal = document.getElementById('modalConfirmar');
+    modal.addEventListener('shown.bs.modal', function () {
+        var btnEnviar = modal.querySelector('.btn-primary');
+        btnEnviar.focus();
+    });
 });
